@@ -1,2 +1,13 @@
 <!--pages/home/index.wxml-->
-<text>pages/home/index.wxml</text>
+<my-navigetion>
+  <view class="flex items-center justify-center">
+    <van-image width="6em" height="3em" src="/static/logo.png" />
+  </view>
+</my-navigetion>
+<view class="flex justify-between bg-white p-md">
+  <van-icon size="1.5em" name='search' />
+  <scroll-view>
+    
+  </scroll-view>
+  <van-icon size="1.5em" name='arrow-down' />
+</view>
