@@ -1,43 +1,38 @@
-// pages/user/index.js
+// pages/question/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    menu: [{
-        icon: "/static/hd.png",
-        text: "回答",
-        url: "/pages/question/index"
+    tabs: {
+      activeId: 0,
+      tabs: [{
+          id: 0,
+          text: "已发布"
+        },
+        {
+          id: 1,
+          text: "审核中"
+        },
+        {
+          id: 2,
+          text: "未通过"
+        },
+      ]
+    },
+    question:[
+      {
+        title:"思维导图的坏处",
+        num:0
       },
       {
-        icon: "/static/tw.png",
-        text: "提问",
-        url:"/pages/putQuestion/index"
+        title:"土偏方真的可信吗？",
+        num:0
       },
       {
-        icon: "/static/wz.png",
-        text: "文章"
-      },
-      {
-        icon: "/static/sc.png",
-        text: "收藏"
-      },
-      {
-        icon: "/static/gz.png",
-        text: "关注"
-      },
-      {
-        icon: "/static/xx.png",
-        text: "消息"
-      },
-      {
-        icon: "/static/kf.png",
-        text: "客服"
-      },
-      {
-        icon: "/static/sz.png",
-        text: "设置"
+        title:"《奥特曼》的原型是什么，作者是怎样构造出这样的人物的",
+        num:0
       },
     ]
   },
@@ -97,20 +92,22 @@ Page({
   onShareAppMessage() {
 
   },
+  handleBack(){
+    wx.navigateBack()
+  },
+  handleToHome(){
+    wx.switchTab({
+      url: '/pages/home/index',
+    })
+  },
   handleClickMenuItem({
     currentTarget
   }) {
     const {
-      menu
+      tab
     } = currentTarget.dataset
-    wx.navigateTo({
-      url: menu.url,
-      fail() {
-        wx.showToast({
-          title: '当前页面维护',
-        })
-      },
-      success() {}
+    this.setData({
+      "tabs.activeId": tab.id
     })
-  }
+  },
 })

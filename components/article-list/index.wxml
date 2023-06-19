@@ -1,0 +1,32 @@
+<!--components/article-list/index.wxml-->
+<view class="bg-white p-md radius-sm">
+  <view class="flex gap-sm items-center">
+    <van-image src="{{avatar}}" round width="2.5em" height="2.5em" />
+    <view class="flex-1 flex justify-between items-center">
+      <view class="flex column gap-xs">
+        <text>{{nickName}}</text>
+        <view class="flex gap-sm text-sm c-secondary">
+          <text>{{time}}</text>
+          <text>{{info}}</text>
+        </view>
+      </view>
+      <view style="--border-color:var(--primary-color)" class="flex c-primary items-center text-sm px-sm py-xs b-1 solid radius-full">
+        <van-icon name="plus" />
+        <text>关注</text>
+      </view>
+    </view>
+  </view>
+  <view class="text-l py-sm f-w-500">
+    <text>{{title}}</text>
+  </view>
+  <view class="ellipsis-3 mb-sm">
+    {{content}}
+  </view>
+  <van-image width="600rpx" radius="var(--sm)" height="300rpx" src="{{img}}" />
+  <view class="flex justify-between items-center">
+    <view class="flex-1 flex items-center gap-sm">
+      <van-tag wx:for="{{tags}}" wx:key="index" plain round color="var(--primary-color)">{{item}}</van-tag>
+    </view>
+    <van-icon name="ellipsis" />
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/question/index.wxml-->
+<my-navigetion>
+  <view class="h-full grid column-3 items-center px-sm">
+    <view class="flex items-center gap-sm">
+      <van-icon bindtap="handleBack" size="1.5em" name="arrow-left" />
+      <van-icon bindtap="handleToHome" size="1.5em" name="wap-home-o" />
+    </view>
+    <text class="align-center">我的回答</text>
+  </view>
+</my-navigetion>
+<view class="flex p-md justify-between">
+  <text wx:for="{{tabs.tabs}}" data-tab="{{item}}" bindtap="handleClickMenuItem" class="tab c-secondary {{tabs.activeId===item.id?'active':''}}" wx:key="index">{{item.text}}</text>
+</view>
+<van-empty description="暂无内容" image="/static/empty.png" />
+<view style="bottom: 0;" class="fixed bt-1 solid w-full p-md f-w-700 flex justify-center c-primary">
+  <view style="line-height: 2em;" class="flex gap-sm">
+    <van-image width="2em" height="2em" src="/static/question.png" />
+    <text>去提问</text>
+  </view>
+</view>

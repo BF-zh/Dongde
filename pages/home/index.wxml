@@ -1,13 +1,22 @@
 <!--pages/home/index.wxml-->
-<my-navigetion>
+<view class="navigation bg-white">
   <view class="flex items-center justify-center">
     <van-image width="6em" height="3em" src="/static/logo.png" />
   </view>
-</my-navigetion>
-<view class="flex justify-between bg-white p-md">
-  <van-icon size="1.5em" name='search' />
-  <scroll-view>
-    
-  </scroll-view>
-  <van-icon size="1.5em" name='arrow-down' />
+  <view class="flex justify-between px-sm gap-sm">
+    <van-icon size="1.5em" name='search' />
+    <scroll-view style="width: calc(100% - 4em);" scroll-x>
+      <view style="white-space:nowrap" class="flex gap-md py-md">
+        <text wx:for="{{navTabs.tabs}}" data-tab="{{item}}" bindtap="handleClickMenuItem" class="tab c-secondary {{navTabs.activeId===item.id?'active':''}}" wx:key="index">{{item.text}}</text>
+      </view>
+    </scroll-view>
+    <van-icon bindtap="handleShowMenu" wx:if="{{!showTab}}" size="1.5em" name='arrow-down' />
+    <van-icon bindtap="handleShowMenu" wx:else size="1.5em" name='arrow-up' />
+  </view>
+  <view wx:if="{{showTab}}" class="grid column-7 px-sm gap-sm align-center">
+    <text wx:for="{{navTabs.tabs}}" data-tab="{{item}}" bindtap="handleClickMenuItem" wx:key="index">{{item.text}}</text>
+  </view>
+</view>
+<view class="m-sm" wx:key="index" wx:for="{{articleList}}">
+  <my-article nickName="{{item.nickName}}" avatar="{{item.avatar}}" time="{{item.time}}" info="{{item.info}}" title="{{item.title}}" content="{{item.content}}" img="{{item.img}}" tags="{{item.tags}}" />
 </view>

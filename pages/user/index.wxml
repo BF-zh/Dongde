@@ -1,2 +1,52 @@
 <!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<my-navigetion>
+  <view class="h-full flex items-center justify-center">
+    <text>个人中心</text>
+  </view>
+</my-navigetion>
+<image class="bg" src="/static/user-bg.png" />
+<view style="color: #9b793f;" class="p-md ">
+  <view class="flex items-center gap-sm">
+    <van-image round width="3em" height="3em" src="/static/tx1.jpeg" />
+    <view class="flex flex-1 items-center justify-between">
+      <view class="flex column">
+        <text class="text-xl f-w-700">北风</text>
+        <text class="text-sm">这个用户很神秘，什么都没有留下～</text>
+      </view>
+      <view>
+        <text>个人主页</text>
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+  <view class="line" />
+  <view class="flex mb-md gap-sm items-stretch text-sm">
+    <van-image width="1em" height="1.2em" src="/static/hy.png" />
+    <text>青铜会员</text>
+    <text>成长值 0/0</text>
+  </view>
+  <view class="grid c-block column-4 p-2xl bg-white radius-sm">
+    <view class="flex column align-center">
+      <text class="text-l f-w-700">0</text>
+      <text>作品</text>
+    </view>
+    <view class="flex column align-center">
+      <text class="text-l f-w-700">0</text>
+      <text>获赞</text>
+    </view>
+    <view class="flex column align-center">
+      <text class="text-l f-w-700">0</text>
+      <text>关注</text>
+    </view>
+    <view class="flex column align-center">
+      <text class="text-l f-w-700">0</text>
+      <text>作品</text>
+    </view>
+  </view>
+</view>
+<view class="m-md py-2xl bg-white radius-md grid column-4 align-center gap-sm">
+  <view class="flex column" wx:key="index" bindtap="handleClickMenuItem" data-menu="{{item}}" wx:for="{{menu}}">
+    <van-image width="2em" height="2em" src="{{item.icon}}" />
+    <text>{{item.text}}</text>
+  </view>
+</view>

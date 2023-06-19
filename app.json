@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/home/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/question/index",
+    "pages/putQuestion/index"
   ],
   "tabBar": {
     "selectedColor": "#8cba2d",
@@ -22,7 +24,10 @@
   } ,
   "usingComponents": {
     "my-navigetion":"/components/navigation/index",
+    "my-article":"/components/article-list/index",
+    "van-tag": "@vant/weapp/tag/index",
     "van-image": "@vant/weapp/image/index",
+    "van-empty": "@vant/weapp/empty/index",
     "van-icon": "@vant/weapp/icon/index"
   },
   "window":{

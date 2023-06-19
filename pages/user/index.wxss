@@ -1,1 +1,13 @@
 /* pages/user/index.wxss */
+.bg{
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.line{
+  --size:6px;
+  height: var(--size);
+  margin: var(--md) 0;
+  border-radius: var(--size);
+  background: linear-gradient(to right,#f6e4c9,#fff);
+}
